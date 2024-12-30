@@ -8,8 +8,12 @@ const flash = require('connect-flash');
 
 const campgrounds = require('./routes/campgrounds');
 const reviews = require('./routes/reviews');
+const users = require('./routes/users');
 
 const ExpressError = require('./utils/ExpressError');
+const passport = require('passport');
+const localStrategy = require('passport-local');
+const User = require('./models/user');
 
 const url = 'mongodb://127.0.0.1:27017/yelp-camp';
 
@@ -45,6 +49,13 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 const port = 3000;
 
 app.use((req, res, next) => {
@@ -53,6 +64,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/', users);
 app.use('/campgrounds', campgrounds);
 app.use('/campgrounds/:id/reviews', reviews);
 
