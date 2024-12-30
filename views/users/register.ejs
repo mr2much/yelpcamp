@@ -1,5 +1,127 @@
-<% layout('layouts/boilerplate') %>
-<h1>Register</h1>
+<% layout('layouts/boilerplate') %> 
+
+<% block('head').append('<link rel="stylesheet" href="/css/register.css"/>') %>
+
+<div class="container">
+    <div class="blueBg">
+        <div class="box signing">
+            <h2>Already have an Account?</h2>
+            <button class="signinBtn">Sign In</button>
+        </div>
+        <div class="box signup">
+            <h2>Don't have an Account?</h2>
+            <button class="registerBtn">Register</button>
+        </div>
+    </div>
+    <div class="formBx">
+        <div class="form signinForm">
+            <h3>Login</h3>
+            <form class="form-validated" action="/register" method="POST" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input
+                    class="form-control"
+                    id="username"
+                    type="text"
+                    name="user[username]"
+                    required
+                    />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please provide a username name!</div>
+                </div>            
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input
+                    class="form-control"
+                    id="password"
+                    type="password"
+                    name="user[password]"
+                    required
+                    />
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please provide a password!</div>
+                </div>
+                <div class="mb-3 d-grid">
+                    <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="form registerForm">
+            <h3>Register</h3>
+            <form class="form-validated" action="/register" method="POST" novalidate>
+                <div class="mb-3">
+                  <label class="form-label" for="username">Username</label>
+                  <input
+                    class="form-control"
+                    id="username"
+                    type="text"
+                    name="user[username]"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please provide a username name!</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="email">Email</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    name="user[email]"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please provide a valid email!</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="password">Password</label>
+                  <input
+                    class="form-control"
+                    id="password"
+                    type="password"
+                    name="user[password]"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please provide a password!</div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="confirm-password">Confirm password</label>
+                  <input
+                    class="form-control"
+                    id="confirm-password"
+                    type="password"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please provide a password!</div>
+                </div>
+                <div class="mb-3 d-grid">
+                  <button class="btn" type="submit">Register</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const signinBtn = document.querySelector('.signinBtn');
+    const registerBtn = document.querySelector('.registerBtn');
+    const formBx = document.querySelector('.formBx');
+    const body = document.querySelector('body');
+
+    registerBtn.addEventListener('click', e => {
+        formBx.classList.add('active');
+        body.classList.add('active');
+    });
+
+    signinBtn.addEventListener('click', e => {
+        formBx.classList.remove('active');
+        body.classList.remove('active');
+    });
+</script>
+
+<!-- <h1>Register</h1>
 <form class="form-validated" action="/register" method="POST" novalidate>
   <div class="mb-3">
     <label class="form-label" for="username">Username</label>
@@ -40,4 +162,4 @@
   <div class="mb-3">
     <button class="btn btn-success" type="submit">Register</button>
   </div>
-</form>
+</form> -->
