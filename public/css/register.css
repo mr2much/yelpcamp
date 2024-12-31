@@ -9,8 +9,34 @@ body {
   transition: 0.5s;
 }
 
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/imgs/bg1.jpeg') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/imgs/bg2.jpeg') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+
 body.active {
   background: #f43648;
+}
+
+body.active::after {
+  opacity: 1;
 }
 
 body.active .formBx::before {
@@ -27,6 +53,7 @@ main {
 
 main .container {
   position: absolute;
+  z-index: 1000;
   width: 800px;
   height: 600px;
   margin: 20px;
@@ -41,8 +68,7 @@ main .container .blueBg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.35);
 }
 
 .blueBg .box {
@@ -83,8 +109,7 @@ main .container .blueBg {
   left: 0;
   width: 50%;
   height: 100%;
-  /* background: #fff; */
-  z-index: 1000;
+  /* z-index: 1000; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +163,10 @@ main .container .blueBg {
   content: '';
   position: absolute;
   inset: 5px;
-  background: #03a9f4;
+  background: url('/imgs/bg1.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   border-radius: inherit;
 }
 
@@ -156,7 +184,10 @@ main .container .blueBg {
 
 .formBx.active span::before,
 .formBx.active span::after {
-  background: #f43648;
+  background: url('/imgs/bg2.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 .formBx .form {
