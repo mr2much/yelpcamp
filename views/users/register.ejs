@@ -3,17 +3,17 @@
 <% block('head').append('<link rel="stylesheet" href="/css/register.css"/>') %>
 
 <div class="container">
-    <div class="blueBg">
+    <div class="blueBg rounded">
         <div class="box signing">
             <h2>Already have an Account?</h2>
-            <button class="signinBtn">Sign In</button>
+            <button class="btn signinBtn">Sign In</button>
         </div>
         <div class="box signup">
             <h2>Don't have an Account?</h2>
-            <button class="registerBtn">Register</button>
+            <button class="btn registerBtn">Register</button>
         </div>
     </div>
-    <div class="formBx">
+    <div class="formBx rounded">
         <div class="form signinForm">
             <h3>Login</h3>
             <form class="form-validated" action="/register" method="POST" novalidate>
