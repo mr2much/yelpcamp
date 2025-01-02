@@ -8,11 +8,6 @@ body {
   height: 100vh;
 }
 
-/* body {
-  padding-top: 56px;
-  margin-top: -56px;
-} */
-
 .container {
   flex: 1;
 }
