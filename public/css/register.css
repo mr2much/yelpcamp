@@ -243,6 +243,21 @@ main .container .blueBg {
   background: #f43648;
 }
 
+.form form input,
+.form form input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 6px 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.form form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 @media (max-width: 991px) {
   main .container {
     max-width: 400px;
