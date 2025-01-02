@@ -1,8 +1,8 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 html {
   background: #03a9f4;
@@ -295,4 +295,8 @@ main .container .blueBg {
   .box.signing {
     top: 0;
   }
+}
+
+.footer {
+  z-index: 1001;
 }

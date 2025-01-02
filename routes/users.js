@@ -12,7 +12,6 @@ router.post(
   '/register',
   catchAsync(async (req, res) => {
     try {
-      console.log('Hitting register route');
       const { user } = req.body;
       const { email, username, password } = user;
 
@@ -36,8 +35,6 @@ router.post(
     failureRedirect: '/access',
   }),
   (req, res) => {
-    console.log(req.body);
-    console.log('Hitting login route');
     req.flash('success', 'Welcome back!');
     res.redirect('/campgrounds');
   }
