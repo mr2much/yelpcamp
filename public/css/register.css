@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   background: #03a9f4;
   transition: 0.5s;
 }
 
-body::before {
+html::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -19,7 +19,7 @@ body::before {
   background-position: center;
 }
 
-body::after {
+html::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -31,15 +31,15 @@ body::after {
   transition: 0.5s;
 }
 
-body.active {
+html.active {
   background: #f43648;
 }
 
-body.active::after {
+html.active::after {
   opacity: 1;
 }
 
-body.active .formBx::before {
+html.active .formBx::before {
   filter: hue-rotate(190deg);
 }
 
@@ -47,7 +47,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100%;
   transition: 0.5s;
 }
 
