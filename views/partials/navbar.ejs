@@ -26,8 +26,11 @@
       </ul>
     </div>
     <div class="navbar-nav">
+      <% if (!currentUser) { %>
       <a href="/access" class="nav-link">Login / Register</a>
+      <% } else { %>
       <a href="/logout" class="nav-link">Logout</a>
+      <% } %>
     </div>
   </div>
 </nav>
