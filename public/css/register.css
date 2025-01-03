@@ -1,15 +1,15 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
-body {
+html {
   background: #03a9f4;
   transition: 0.5s;
 }
 
-body::before {
+html::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -19,7 +19,7 @@ body::before {
   background-position: center;
 }
 
-body::after {
+html::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -31,15 +31,15 @@ body::after {
   transition: 0.5s;
 }
 
-body.active {
+html.active {
   background: #f43648;
 }
 
-body.active::after {
+html.active::after {
   opacity: 1;
 }
 
-body.active .formBx::before {
+html.active .formBx::before {
   filter: hue-rotate(190deg);
 }
 
@@ -47,7 +47,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: 100%;
   transition: 0.5s;
 }
 
@@ -68,7 +69,7 @@ main .container .blueBg {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 45px rgba(255, 255, 255, 0.35);
 }
 
 .blueBg .box {
@@ -243,6 +244,21 @@ main .container .blueBg {
   background: #f43648;
 }
 
+.form form input,
+.form form input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 6px 15px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.form form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 @media (max-width: 991px) {
   main .container {
     max-width: 400px;
@@ -279,4 +295,8 @@ main .container .blueBg {
   .box.signing {
     top: 0;
   }
+}
+
+.footer {
+  z-index: 1001;
 }
